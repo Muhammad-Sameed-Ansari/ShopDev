@@ -11,7 +11,7 @@ import SwiftUI
 struct ShopDevApp: App {
     var body: some Scene {
         WindowGroup {
-            Splash()
+            Splash(columnVisibility: NavigationSplitViewVisibility.detailOnly)
         }
     }
 }

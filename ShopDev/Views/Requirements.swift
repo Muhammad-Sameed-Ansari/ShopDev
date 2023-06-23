@@ -78,6 +78,7 @@ struct Requirements: View {
                 }
                 .disabled(experienceLevel == "Please Select")
                 .buttonStyle(.borderedProminent)
+                .padding(.bottom)
             }
             .navigationTitle(technologyName)
             .navigationBarTitleDisplayMode(.inline)

@@ -34,6 +34,16 @@ class Company: Identifiable, ObservableObject, Codable {
         developerCost -= product.cost
     }
     
+    func resetComapnyDetails() {
+        id = UUID()
+        personName = ""
+        companyName = ""
+        phoneNumber = ""
+        email = ""
+        products = []
+        developerCost = 0
+    }
+    
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         

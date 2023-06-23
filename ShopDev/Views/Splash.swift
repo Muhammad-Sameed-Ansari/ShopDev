@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct Splash: View {
-    @State private var columnVisibility =
-    NavigationSplitViewVisibility.detailOnly
+    @State var columnVisibility: NavigationSplitViewVisibility
     
     var body: some View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
@@ -35,8 +34,9 @@ struct Splash: View {
                         .frame(width: 900, height: 350)
                         .scaledToFit()
                     
-                    Text("Sponsored By")
+                    Text("Proud Partners")
                         .font(.title)
+                        .bold()
                     
                     HStack {
                         Image("hazza-Logo")
@@ -89,6 +89,6 @@ struct Splash: View {
 
 struct Splash_Previews: PreviewProvider {
     static var previews: some View {
-        Splash()
+        Splash(columnVisibility: NavigationSplitViewVisibility.detailOnly)
     }
 }

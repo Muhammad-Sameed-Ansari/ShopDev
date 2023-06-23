@@ -20,7 +20,7 @@ struct PlaceOrderAlert: View {
                 .bold()
             
             Button {
-                showAlert.toggle()
+                
             } label: {
                 Text("Done")
                     .frame(maxWidth: 250, maxHeight: 40)
@@ -34,7 +34,6 @@ struct PlaceOrderAlert: View {
         .background(Color.white)
         .cornerRadius(12)
         .shadow(radius: 100)
-//        .clipped()
     }
 }
 

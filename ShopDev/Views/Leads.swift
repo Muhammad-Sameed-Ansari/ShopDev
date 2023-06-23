@@ -19,13 +19,41 @@ struct Leads: View {
         
         return []
     }
+    var leadsString: String {
+        var str = ""
+        for company in companies {
+            var companyDetails = ""
+            
+            companyDetails += "\(company.personName) - \(company.companyName) - \(company.phoneNumber) - \(company.email)\n"
+            
+            for product in company.products {
+                companyDetails += "\(product.name)\n"
+                companyDetails += "\(product.experienceLevel) - \(product.numberOfDevelopers) - \(product.cost)\n"
+            }
+            
+            companyDetails += "Developer Cost: \(company.developerCost)\n"
+            companyDetails += "GST (5%): \(company.gstCost)\n"
+            companyDetails += "Total Cost: \(company.totalCost)\n"
+            companyDetails += "-------------------------------\n"
+            
+            str += companyDetails
+        }
+        
+        print("sameed\n\(str)")
+        return str
+    }
     
     var body: some View {
 //        if companies.count > 0 {
         NavigationStack {
             if companies.count > 0 {
-                List(companies) {
-                    Text($0.companyName)
+                VStack {
+                    List(companies) {
+                        Text($0.companyName)
+                    }
+                    
+                    ShareLink(item: leadsString)
+                    
                 }
                 .navigationTitle("Leads")
             } else {

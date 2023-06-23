@@ -15,6 +15,7 @@
 		5C0901DB2A399B1200DC7FEC /* TechnologyCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0901DA2A399B1200DC7FEC /* TechnologyCard.swift */; };
 		5C0901DD2A3A27CA00DC7FEC /* Requirements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0901DC2A3A27CA00DC7FEC /* Requirements.swift */; };
 		5C0E8FB42A3FA18700E0DA7F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0E8FB32A3FA18700E0DA7F /* Cart.swift */; };
+		5C2F0C5E2A45E1E100D237E0 /* NavigationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C2F0C5D2A45E1E100D237E0 /* NavigationHelper.swift */; };
 		5C3D22822A3B384B001B9FCD /* Technology.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3D22812A3B384B001B9FCD /* Technology.swift */; };
 		5C3D22842A3B3859001B9FCD /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3D22832A3B3859001B9FCD /* Company.swift */; };
 		5C3D22872A3B3B69001B9FCD /* CartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3D22862A3B3B69001B9FCD /* CartButton.swift */; };
@@ -38,6 +39,7 @@
 		5C0901DA2A399B1200DC7FEC /* TechnologyCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnologyCard.swift; sourceTree = "<group>"; };
 		5C0901DC2A3A27CA00DC7FEC /* Requirements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requirements.swift; sourceTree = "<group>"; };
 		5C0E8FB32A3FA18700E0DA7F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		5C2F0C5D2A45E1E100D237E0 /* NavigationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHelper.swift; sourceTree = "<group>"; };
 		5C3D22812A3B384B001B9FCD /* Technology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technology.swift; sourceTree = "<group>"; };
 		5C3D22832A3B3859001B9FCD /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		5C3D22862A3B3B69001B9FCD /* CartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartButton.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		5C0901C92A3991EB00DC7FEC /* ShopDev */ = {
 			isa = PBXGroup;
 			children = (
+				5C2F0C5C2A45E1CD00D237E0 /* Helper */,
 				5C7129DA2A40F1A300A95233 /* Lottie */,
 				5C1F70BE2A3CA4B500DA4F4E /* Views */,
 				5C3D22852A3B3B48001B9FCD /* Components */,
@@ -111,6 +114,14 @@
 				5C7129DD2A418D6F00A95233 /* Splash.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5C2F0C5C2A45E1CD00D237E0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5C2F0C5D2A45E1E100D237E0 /* NavigationHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		5C3D22802A3B3783001B9FCD /* Models */ = {
@@ -192,6 +203,7 @@
 			mainGroup = 5C0901BE2A3991EB00DC7FEC;
 			packageReferences = (
 				5C7129D72A40EF2900A95233 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				5C2F0C592A459FDF00D237E0 /* XCRemoteSwiftPackageReference "CodableCSV" */,
 			);
 			productRefGroup = 5C0901C82A3991EB00DC7FEC /* Products */;
 			projectDirPath = "";
@@ -223,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C0901CD2A3991EB00DC7FEC /* ContentView.swift in Sources */,
+				5C2F0C5E2A45E1E100D237E0 /* NavigationHelper.swift in Sources */,
 				5C0E8FB42A3FA18700E0DA7F /* Cart.swift in Sources */,
 				5C3D22872A3B3B69001B9FCD /* CartButton.swift in Sources */,
 				5C3D22822A3B384B001B9FCD /* Technology.swift in Sources */,
@@ -439,6 +452,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5C2F0C592A459FDF00D237E0 /* XCRemoteSwiftPackageReference "CodableCSV" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dehesa/CodableCSV.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.7;
+			};
+		};
 		5C7129D72A40EF2900A95233 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";

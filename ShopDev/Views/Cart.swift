@@ -83,27 +83,26 @@ struct Cart: View {
                         
                         Button {
                             showAlert.toggle()
-                            //                    var companies: [Company] = []
-                            //
-                            //                    if let savedCompanies = UserDefaults.standard.object(forKey: "Companies") as? Data {
-                            //                        let decoder = JSONDecoder()
-                            //
-                            //                        if let loadedCompanies = try? decoder.decode([Company].self, from: savedCompanies) {
-                            //                            companies = loadedCompanies
-                            //                            print("sameed-companies loaded from user defaults\n\(loadedCompanies)")
-                            //                        }
-                            //                    }
-                            //
-                            //                    companies.append(company)
-                            //
-                            //                    let encoder = JSONEncoder()
-                            //
-                            //                    if let data = try? encoder.encode(companies) {
-                            //                        UserDefaults.standard.set(data, forKey: "Companies")
-                            //                        print("sameed-company added to user defaults")
-                            //                    }
-                            //
-                            //                    print("sameed-after adding to user defaults\n \(companies)")
+                            var companies: [Company] = []
+                            
+                            if let savedCompanies = UserDefaults.standard.object(forKey: "Companies") as? Data {
+                                let decoder = JSONDecoder()
+                                
+                                if let loadedCompanies = try? decoder.decode([Company].self, from: savedCompanies) {
+                                    companies = loadedCompanies
+                                    print("sameed-companies loaded from user defaults\n\(loadedCompanies)")
+                                }
+                            }
+                            
+                            companies.append(company)
+                            
+                            let encoder = JSONEncoder()
+                            
+                            if let data = try? encoder.encode(companies) {
+                                UserDefaults.standard.set(data, forKey: "Companies")
+                            }
+                            
+                            company.resetComapnyDetails()
                         } label: {
                             Text("Place Order")
                                 .frame(maxWidth: 250, maxHeight: 40)
@@ -148,6 +147,6 @@ struct Cart_Previews: PreviewProvider {
         let company = Company()
         company.products.append(Technology(name: "iOS", image: "iOS", experienceLevel: "Junior (1-2)", numberOfDevelopers: 3))
         return Cart()
-                .environmentObject(company)
+            .environmentObject(company)
     }
 }
