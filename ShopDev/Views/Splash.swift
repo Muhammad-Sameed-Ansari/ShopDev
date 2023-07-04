@@ -14,7 +14,6 @@ struct Splash: View {
         NavigationSplitView(columnVisibility: $columnVisibility) {
             VStack {
                 LottieView(lottieFile: "coffee")
-//                    .background(.red)
                     .frame(height: 400)
                 
                 Text("All Order Placed During Collision Get First Month At 50% OFF")
@@ -27,59 +26,65 @@ struct Splash: View {
             }
             .toolbar(.hidden, for: .navigationBar)
         } detail:{
-            VStack {
-                Group {
-                    Image("creatrixe")
+            NavigationStack {
+                VStack {
+                    Group {
+                        Image("creatrixe")
                         
-                        .frame(width: 900, height: 350)
-                        .scaledToFit()
-                    
-                    Text("Proud Partners")
-                        .font(.title)
-                        .bold()
+                            .frame(width: 900, height: 350)
+                            .scaledToFit()
+                        
+                        Text("Proud Partners")
+                            .font(.title)
+                            .bold()
+                        
+                        HStack {
+                            Image("hazza-Logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxWidth: .infinity)
+                            
+                            Image("pixle-paddle-logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxWidth: .infinity)
+                            
+                            Image("PRM-logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxWidth: .infinity)
+                        }
+                        .frame(maxHeight: 100)
+                        .padding()
+                        .background(Color("logoBackground"))
+                    }
+                    .frame(maxHeight: .infinity, alignment: .center)
                     
                     HStack {
-                        Image("hazza-Logo")
-                            .resizable()
+                        LottieView(lottieFile: "coffee")
+                            .frame(maxWidth: 100)
                             .scaledToFit()
-                            .frame(maxWidth: .infinity)
                         
-                        Image("pixle-paddle-logo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: .infinity)
+                        NavigationLink(destination: ContentView()
+                            .navigationBarBackButtonHidden(true)
+                            .onAppear {
+                                columnVisibility = NavigationSplitViewVisibility.doubleColumn
+                            }) {
+                                Text("Tap To Start")
+                                    .frame(maxWidth: 250, maxHeight: 40)
+                                    .font(.title2)
+                                    .bold()
+                            }
+                            .padding(.top, 25)
+                            .buttonStyle(.borderedProminent)
                         
-                        Image("PRM-logo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: .infinity)
+                        LottieView(lottieFile: "coffee")
+                            .frame(maxWidth: 100)
                     }
-                    .frame(maxHeight: 100)
-                    .padding()
-                    .background(Color("logoBackground"))
                 }
-                .frame(maxHeight: .infinity, alignment: .center)
-                
-                HStack {
-                    LottieView(lottieFile: "coffee")
-                        .frame(maxWidth: 100)
-                        .scaledToFit()
-
-                    NavigationLink(destination: ContentView()/*.navigationBarBackButtonHidden(true)*/
-                        .onAppear {
-                            columnVisibility = NavigationSplitViewVisibility.doubleColumn
-                        }) {
-                        Text("Tap To Start")
-                            .frame(maxWidth: 250, maxHeight: 40)
-                            .font(.title2)
-                            .bold()
-                    }
-                    .padding(.top, 25)
-                    .buttonStyle(.borderedProminent)
-                        
-                    LottieView(lottieFile: "coffee")
-                        .frame(maxWidth: 100)
-                }
+            }
+            .onAppear {
+                columnVisibility = NavigationSplitViewVisibility.detailOnly
             }
             .toolbar(.hidden, for: .navigationBar)
             .background(Color("backgroundColor"))
